@@ -8,7 +8,6 @@ Website:
 http://www.farinhansford.com/books/cagd/
 http://www.mkp.com/cagd5e
 
-
 The datasets come from an personal email from G. Farin. I enquired about the datasets as the two homepages mentioned above
 do not seem to carry them anymore. He answered:
 
