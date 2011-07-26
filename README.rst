@@ -7,8 +7,9 @@ tasks from the book
 Curves and Surfaces for GAGD (Computer Aided Geometric Design) by Gerald Farin, 5th Edition
 
 Websites:
-* http://www.farinhansford.com/books/cagd/
-* http://www.mkp.com/cagd5e
+
+   * http://www.farinhansford.com/books/cagd/
+   * http://www.mkp.com/cagd5e
 
 The datasets come from a personal email from G. Farin. I enquired about the
 datasets since I couldn't find them on the two pages mentioned above anymore.
@@ -36,6 +37,8 @@ in each file so that the code is also interesting without access to the book.
 However, the book is much more complete and discusses more than what I am
 interested in.
 
-* `Blossoms and Blender as Visualization Tool <http://sirver.widelands.org/blog/2011/07/19/blender-2.5-and-blossoms/>`
+* `Blossoms and Blender as Visualization Tool`__
+  
+__ <http://sirver.widelands.org/blog/2011/07/19/blender-2.5-and-blossoms/>
 
 
