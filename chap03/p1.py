@@ -1,17 +1,14 @@
 #!/usr/bin/env python
 # encoding: utf-8
 
-# Hack: Boilerplate so that Blender 2.5 finds my numpy installation.
-import sys
-bpath = "/usr/local/Cellar/python3/3.2.1/lib/python3.2/"
-if bpath not in sys.path:
-    sys.path.extend((bpath, bpath + "site-packages"))
+import sys; sys.path.append("..")
 
 import numpy as np
 
 import bpy
 from bpy.props import *
-from bpy_extras import object_utils
+
+from blender_utils import replace_mesh
 
 """
 Draw the blossom as points in Blender
@@ -32,12 +29,13 @@ class Blossom(object):
 
 def draw(obj, context):
     """Always called when one of the parameters changes. Removes
-    any existing Blossom object and redraws it
+    any existing Blossom object and redraws it. Uses the currently
+    selected object as the 3 Points to interpolate in between.
+
+    The z coordinate is ignored
     """
     # Use the currently selected object as the 3 Points to interpolate in between
-    o = context.selected_objects[0]
-    name = o.name
-    new_name = o.name + "_blossom"
+    new_name = context.select_objects[0].name + "_blossom"
 
     # Generate the vertices for the Blossom
     b = Blossom(*[(p.co[0],p.co[1]) for p in o.data.vertices])
@@ -45,27 +43,7 @@ def draw(obj, context):
     ss = np.linspace(0,1, obj['ssteps'])
     verts = [ tuple(b(s,t)) + (0,) for s in ss for t in ts ]
 
-    # Remove the old object, if it exists.
-    scn = context.scene
-    if new_name in scn.objects:
-        scn.objects.unlink(scn.objects[new_name])
-        bpy.data.objects.remove(bpy.data.objects[new_name])
-        bpy.data.meshes.remove(bpy.data.meshes[new_name])
-
-    # Generate a new object with the given vertices
-    mesh = bpy.data.meshes.new(new_name)
-    mesh.from_pydata(verts, [], [])
-    mesh.update()
-    no = object_utils.object_data_add(context, mesh, operator=None).object
-
-    # Move the Blossom object to the same space as the original object
-    no.matrix_world = o.matrix_world
-
-    # Make sure to keep the frame object selected so that we can change the 
-    # parameters again.
-    for obj in bpy.context.selected_objects:
-        obj.select = False
-    o.select = True
+    replace_mesh(context, new_name, verts, related_obj = o)
 
 
 class VIEW3D_PT_3dnavigationPanel(bpy.types.Panel):
