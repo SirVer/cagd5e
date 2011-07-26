@@ -38,7 +38,8 @@ However, the book is much more complete and discusses more than what I am
 interested in.
 
 * `Blossoms and Blender as Visualization Tool`__
+* `The de Casteljau Algorithm`__
   
 __ http://sirver.widelands.org/blog/2011/07/19/blender-2.5-and-blossoms/
-
+__ http://sirver.widelands.org/blog/2011/07/26/the-de-casteljau-algorithm/
 
