@@ -15,12 +15,12 @@ def replace_mesh(context, name, verts, edges = [], faces = [], related_obj = Non
     # Remove the old object, if it exists.
     scn = context.scene
     for obj in scn.objects:
-        if obj.name.startswith(name):
+        if obj.name == name or obj.name.startswith(name + '.'):
             scn.objects.unlink(obj)
             bpy.data.objects.remove(obj)
 
     for mesh in bpy.data.meshes:
-        if mesh.name.startswith(name):
+        if mesh.name == name or mesh.name.startswith(name + '.'):
             bpy.data.meshes.remove(mesh)
 
     # Generate a new object with the given vertices

@@ -15,26 +15,34 @@ Uses the the casteljau alogrithm to Plot Bezier Curves of points
 """
 
 class DeCasteljau:
-    def __init__(self, *pts):
+    def __init__(self, *pts, func = lambda t: t):
         self._b = np.asarray(pts, dtype=np.float64)
+        self._func = func
 
     def __call__(self, t):
         b, n = self._b, len(self._b)
         for r in range(1,n):
             for i in range(n-r):
-                b[i] = (1-t)*b[i]+t*b[i+1]
+                b[i] = (1-self._func(t))*b[i]+self._func(t)*b[i+1]
 
         return b[0]
 
 def draw(obj, context):
     o = context.selected_objects[0]
-    new_name = o.name + "_spline"
 
-    spline = DeCasteljau(*[ k.co for k in o.data.vertices])
-    ts = np.linspace(0,1, obj['tsteps'])
-    verts = [ tuple(spline(t)) for t in ts ]
+    for func, new_name in (
+            (lambda t: t, "spl"),
+            (lambda t: t**3, "spl_t3"),
+            (lambda t: t**6, "spl_t6"),
+            (lambda t: np.sin(t), "spl_sint"),
+            (lambda t: np.cos(t), "spl_cost"),
+            (lambda t: t - 2.5, "spl_trans"),
+    ):
+        spline = DeCasteljau(*[ k.co for k in o.data.vertices], func = func)
+        ts = np.linspace(0,1, obj['tsteps'])
+        verts = [ tuple(spline(t)) for t in ts ]
 
-    replace_mesh(context, new_name, verts, related_obj = o)
+        replace_mesh(context, new_name, verts, related_obj = o)
 
 
 class VIEW3D_PT_3dnavigationPanel(bpy.types.Panel):
@@ -54,7 +62,7 @@ class VIEW3D_PT_3dnavigationPanel(bpy.types.Panel):
             return False
 
         obj = context.selected_objects[0]
-        if (obj and obj.type == 'MESH' and len(obj.data.vertices) >= 3):
+        if (obj and obj.type == 'MESH' and len(obj.data.vertices) >= 3 and "spline" not in obj.name):
                 return True
         return False
 
