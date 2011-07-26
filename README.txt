@@ -8,3 +8,10 @@ Website:
 http://www.farinhansford.com/books/cagd/
 http://www.mkp.com/cagd5e
 
+
+The datasets come from an personal email from G. Farin. I enquired about the datasets as the two homepages mentioned above
+do not seem to carry them anymore. He answered:
+
+   "I don’t seem to have a whole lot. But here it comes…"
+
+Therefore the datasets are likely not complete, but better than nothing.
