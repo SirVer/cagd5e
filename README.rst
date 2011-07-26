@@ -39,6 +39,6 @@ interested in.
 
 * `Blossoms and Blender as Visualization Tool`__
   
-__ <http://sirver.widelands.org/blog/2011/07/19/blender-2.5-and-blossoms/>
+__ http://sirver.widelands.org/blog/2011/07/19/blender-2.5-and-blossoms/
 
 
