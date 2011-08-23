@@ -45,5 +45,5 @@ interested in.
   
 __ http://www.sirver.net/blog/2011/07/19/blender-2.5-and-blossoms/
 __ http://www.sirver.net/blog/2011/07/26/the-de-casteljau-algorithm/
-__ http://www.sirver.net/blog/2011/08/23/degree-reduction-of-bézier-curves
+__ http://www.sirver.net/blog/2011/08/23/degree-reduction-of-bezier-curves
 
