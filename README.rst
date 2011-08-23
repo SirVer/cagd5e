@@ -41,7 +41,9 @@ interested in.
 
 * `Blossoms and Blender as Visualization Tool`__
 * `The de Casteljau Algorithm`__
+* `Degree reduction of Bézier curves`__
   
-__ http://sirver.widelands.org/blog/2011/07/19/blender-2.5-and-blossoms/
-__ http://sirver.widelands.org/blog/2011/07/26/the-de-casteljau-algorithm/
+__ http://www.sirver.net/blog/2011/07/19/blender-2.5-and-blossoms/
+__ http://www.sirver.net/blog/2011/07/26/the-de-casteljau-algorithm/
+__ http://www.sirver.net/blog/2011/08/23/degree-reduction-of-bézier-curves
 
