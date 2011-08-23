@@ -8,8 +8,8 @@ Curves and Surfaces for GAGD (Computer Aided Geometric Design) by Gerald Farin, 
 
 Websites:
 
-   * http://www.farinhansford.com/books/cagd/
-   * http://www.mkp.com/cagd5e
+* http://www.farinhansford.com/books/cagd/
+* http://www.mkp.com/cagd5e
 
 The datasets come from a personal email from G. Farin. I enquired about the
 datasets since I couldn't find them on the two pages mentioned above anymore.
@@ -17,7 +17,8 @@ He answered:
 
    I don’t seem to have a whole lot. But here it comes…
 
-Therefore the datasets are likely not complete, but better than nothing.
+Therefore the datasets are likely not complete, but better than nothing. I
+also extracted the files that are linked on the homepage in allfiles.txt.
 
 Usage
 =====
@@ -28,6 +29,7 @@ library installed and in a way that blender is able to find it. I manually
 tweak the sys.path variable for this whenever I start blender.
 
 .. _Blender: http://www.blender.org
+.. _numpy: http://numpy.scipy.org
 
 Related Blog Posts
 ==================

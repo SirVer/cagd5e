@@ -25,7 +25,7 @@ def replace_mesh(context, name, verts, edges = [], faces = [], related_obj = Non
 
     # Generate a new object with the given vertices
     mesh = bpy.data.meshes.new(name)
-    mesh.from_pydata(verts, [], [])
+    mesh.from_pydata(verts, edges, faces)
     mesh.update()
     no = object_utils.object_data_add(context, mesh, operator=None).object
 
@@ -38,6 +38,8 @@ def replace_mesh(context, name, verts, edges = [], faces = [], related_obj = Non
         for obj in bpy.context.selected_objects:
             obj.select = False
         related_obj.select = True
+
+    return no
 
 
 
