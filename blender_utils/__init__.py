@@ -8,8 +8,11 @@ bpath = "/usr/local/Cellar/python3/3.2.1/lib/python3.2/"
 if bpath not in sys.path:
     sys.path.extend((bpath, bpath + "site-packages"))
 
-import bpy
-from bpy_extras import object_utils
+try:
+    import bpy
+    from bpy_extras import object_utils
+except ImportError:
+    pass
 
 def replace_mesh(context, name, verts, edges = [], faces = [], related_obj = None):
     # Remove the old object, if it exists.

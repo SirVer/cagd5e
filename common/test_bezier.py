@@ -8,7 +8,7 @@ from numpy.testing import assert_almost_equal
 
 from bezier import HornerBezier, DeCasteljauBezier, HornerPowerBezier
 
-class SomeTestClass(unittest.TestCase):
+class TestBezier(unittest.TestCase):
     def setUp(self):
         self.pts = np.asarray([ (0,0), (40.,20.), (50.,10), (60,20) ])
         self.hz = HornerBezier(*self.pts)
