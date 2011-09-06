@@ -46,7 +46,7 @@ interested in.
 * `Blossoms and Blender as Visualization Tool`__
 * `The de Casteljau Algorithm`__
 * `Degree reduction of Bézier curves`__
-* `Bridging between Lagrange and Bezier Interpolation`_
+* `Bridging between Lagrange and Bezier Interpolation`__
   
 __ http://www.sirver.net/blog/2011/07/19/blender-2.5-and-blossoms/
 __ http://www.sirver.net/blog/2011/07/26/the-de-casteljau-algorithm/
