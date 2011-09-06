@@ -28,8 +28,12 @@ it as a cheap 3D visualization toolkit. You also need to have the numpy_
 library installed and in a way that blender is able to find it. I manually
 tweak the sys.path variable for this whenever I start blender.
 
+For some scripts I use `matplotlib`_ to visualize some stuff where firing up
+blender didn't really seem useful.
+
 .. _Blender: http://www.blender.org
 .. _numpy: http://numpy.scipy.org
+.. _matplotlib: http://matplotlib.sourceforge.net/
 
 Related Blog Posts
 ==================
@@ -42,8 +46,9 @@ interested in.
 * `Blossoms and Blender as Visualization Tool`__
 * `The de Casteljau Algorithm`__
 * `Degree reduction of Bézier curves`__
+* `Bridging between Lagrange and Bezier Interpolation`_
   
 __ http://www.sirver.net/blog/2011/07/19/blender-2.5-and-blossoms/
 __ http://www.sirver.net/blog/2011/07/26/the-de-casteljau-algorithm/
 __ http://www.sirver.net/blog/2011/08/23/degree-reduction-of-bezier-curves
-
+__ http://www.sirver.net/blog/2011/09/06/the-bridge-between-lagrange-and-bezier-interpolation/
